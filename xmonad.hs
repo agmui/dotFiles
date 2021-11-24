@@ -25,10 +25,11 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
 import XMonad.Actions.GridSelect
 import XMonad.Hooks.SetWMName
+import XMonad.Layout.Spacing
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "xfce4-terminal"
+myTerminal      = "alacritty"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -40,7 +41,7 @@ myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
-myBorderWidth   = 3 
+myBorderWidth   = 5
 
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
@@ -73,7 +74,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch a terminal
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    -- launch dmenu
+    -- launch rofi
     , ((modm,               xK_p     ), spawn "rofi -modi run -show run")
 
     -- launch gmrun
@@ -134,13 +135,28 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_a    ), withLastMinimized maximizeWindowAndFocus)
 
     -- Show all windows
-    , ((modm              , xK_g), goToSelected defaultGSConfig)
+    --, ((modm              , xK_g), goToSelected defaultGSConfig)
     
     -- Screen shot
     , ((modm .|. shiftMask, xK_s    ), spawn "flameshot gui")
 
     -- ORC
     , ((modm              , xK_s), spawn "maim --hidecursor -s | tesseract stdin stdout --psm 6 | xclip -sel clipboard")
+
+    -- increase brightness
+    , ((0, 0x1008FF02), spawn "lux -a 15%")
+
+    -- decrease brightness
+    , ((0, 0x1008FF03), spawn "lux -s 15%")
+
+    -- increase volume
+    , ((0, 0x1008FF13), spawn "amixer set Master 4%+")
+    
+    -- decrease volume
+    , ((0, 0x1008FF11), spawn "amixer set Master 4%-")
+
+    -- toggle mute
+    , ((0, 0x1008FF12), spawn "amixer -D pulse set Master 1+ toggle")
 
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
@@ -173,7 +189,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
     [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_r, xK_w, xK_e] [0..]
+        | (key, sc) <- zip [xK_w, xK_e] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
@@ -222,7 +238,12 @@ myLayout = minimize ( avoidStruts (tiled ||| Mirror tiled ||| Full))
      delta   = 3/100
 
      -- minimize and maximize
-     main = xmonad def {layoutHook = minimize.BW.boringWindows $ myLayout}
+     --main = xmonad def {layoutHook = minimize.BW.boringWindows $ myLayout}
+     
+     -- add space around windows
+     main = xmonad $ def
+       { layoutHook = spacingWithEdge 10 $ myLayout
+        }
 
 ------------------------------------------------------------------------
 -- Window rules:
@@ -243,8 +264,7 @@ myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
     , className =? "yakuake"        --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    , resource  =? "desktop_window" --> doIgnore]
 
 ------------------------------------------------------------------------
 -- Event handling
@@ -279,8 +299,9 @@ myStartupHook = do
         spawnOnce "picom &" 
         spawnOnce "yakuake &"
         spawnOnce "~/.screenlayout/default.sh &"
-        spawnOnce  "barrier"
+        --spawnOnce  "barrier"
         spawnOnce "firefox"
+        spawnOnce "xfce4-power-manager"
         setWMName "LG3D"
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
