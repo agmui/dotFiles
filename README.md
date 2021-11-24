@@ -1,5 +1,4 @@
 # dotFiles
-install
 
 | program | package   |
 | ------- | --------- |
@@ -8,3 +7,6 @@ install
 |Monitor  | xmobarr   |
 |Editor   | vim       |
 |Terminal | alacritty |
+|wallpaper| feh       |
+|launcher | rofi      |
+|compositor| picom    |
