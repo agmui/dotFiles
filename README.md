@@ -3,9 +3,9 @@
 | program | package   |
 | ------- | --------- |
 |shell    | zsh       |
-|WM       | xmonad    |
-|Monitor  | xmobarr   |
-|Editor   | vim       |
+|WM       | i3        |
+|Monitor  | polybar   |
+|Editor   | nvim      |
 |Terminal | alacritty |
 |wallpaper| feh       |
 |launcher | rofi      |
