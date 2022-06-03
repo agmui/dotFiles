@@ -4,12 +4,14 @@ call plug#begin('~/.vim/plugged')
     Plug 'doums/darcula'
     Plug 'itchyny/lightline.vim'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'godlygeek/tabular'
-    Plug 'plasticboy/vim-markdown'
+    " Plug 'godlygeek/tabular'
+    " Plug 'plasticboy/vim-markdown'
     Plug 'aklt/plantuml-syntax'
     Plug 'tyru/open-browser.vim'
     Plug 'weirongxu/plantuml-previewer.vim'
-
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+    Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 set number
 set ruler
@@ -36,8 +38,8 @@ set sidescroll=1
 set nowrap
 set ignorecase
 set laststatus=2
-set cursorline
-set relativenumber
+" set cursorline
+" set relativenumber
 set colorcolumn=80
 set timeoutlen=1000 ttimeoutlen=0
 set mouse=a
@@ -107,8 +109,15 @@ let g:vimtex_view_general_options = '--unique file:@pdf\#src:@line@tex'
 " want another compiler backend, you can change it as follows. The list of
 " supported backends and further explanation is provided in the documentation,
 " see ":help vimtex-compiler".
-let g:vimtex_compiler_method = 'latexrun'
+let g:vimtex_compiler_method = 'latexmk'
+" let g:vimtex_compiler_method = 'latexrun'
 
 " Most VimTeX mappings rely on localleader and this can be changed with the
 " following line. The default is usually fine and is the symbol "\".
 let maplocalleader = ","
+
+" rainbow indent
+let g:indent_guides_auto_colors = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+let g:indent_guides_enable_on_vim_startup = 1
