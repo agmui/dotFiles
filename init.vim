@@ -121,3 +121,10 @@ let g:indent_guides_auto_colors = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 let g:indent_guides_enable_on_vim_startup = 1
+
+" spell checking for spesific file types
+augroup markdownSpell
+    autocmd!
+    autocmd FileType markdown setlocal spell
+    autocmd BufRead,BufNewFile *.md setlocal spell
+augroup END
