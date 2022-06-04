@@ -113,6 +113,9 @@ alias v="nvim"
 alias na="sudo nala install" #"sudo pacman -S $1 || yay -S $1"
 alias ls="exa --icons -sold -snew"
 alias neofetch="neofetch --ascii_distro Regolith"
+# global aliases so it can be used in multi commands
+alias -g apt-get="nala"
+alias -g apt="nala"
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
