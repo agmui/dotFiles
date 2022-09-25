@@ -40,6 +40,7 @@ deb_install () {
 	# zsh
     echo -e "${GREEN}installing zsh${ENDCOLOR}"
 	sudo apt install -y zsh
+    echo -e "${GREEN}input pass${ENDCOLOR}"
 	echo $pass\n | sudo chsh -s $(which zsh)
 	echo $pass\n | chsh -s $(which zsh)
 	sudo apt install -y cargo 
