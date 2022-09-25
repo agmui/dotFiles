@@ -45,10 +45,11 @@ deb_install () {
 	sudo apt install -y cargo 
 	yes | cago install exa
 
-    : '
+    echo -e "${GREEN}installing ohmyzsh${ENDCOLOR}"
 	sudo apt install -y curl
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) RUNZSH='no'"
 	cp $HOME/dotFiles/.zshrc $HOME
+    : '
 	# zsh plugins
 	sudo apt install -y autojump
 	cd $HOME/Installs
