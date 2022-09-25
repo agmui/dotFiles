@@ -1,0 +1,129 @@
+#!/bin/bash
+deb_install () {
+	echo installing git, kitty, zsh, nala, firefox, nvim, Latex, Discord, ranger, flameshot, timeshift
+	read -n1 -p "install? [Y,n]" doit
+	if [[$doit == 'y' || $doit =='Y']]; then
+		echo starting install
+	else
+		exit
+	fi
+
+	# basic startup
+	echo -ne '\n\n' | sudo apt update && sudo apt upgrade
+	rm -rf Templates/ Desktop/ Music/ Videos/
+	mkdir Installs cs
+
+	# git
+	echo | sudo apt install git make
+	git clone https://github.com/agmui/dotFiles.git
+
+	# kitty
+	echo | sudo apt install kitty
+	mkdir $HOME/.config/kitty
+	cp $HOME/dotFiles/kitty.conf $HOME/.config/kitty/kitty
+	cd $HOME
+
+	# zsh
+	echo | sudo apt install zsh
+	# chsh -s $(which zsh)
+	echo | sudo apt install cargo 
+	echo | cago install exa
+
+	echo | sudo apt install curl
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	cp $HOME/dotFiles/.zshrc $HOME
+	# zsh plugins
+	echo | sudo apt install autojump
+	cd $HOME/Installs
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+	# p10k configure
+	cd $HOME
+
+	# nala
+	echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
+	wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
+	sudo apt update
+	if [[cat /etc/os-release | grep VERSION="2*" == "VERSION=\"22.*\""]]; then
+		echo | sudo apt install nala
+	else
+		echo | sudo apt install nala-legacy
+	fi
+
+	#Latex
+	echo | sudo nala install -y latexmk zathura
+
+	# firefox, ranger, nvim, flameshot
+	echo | sudo nala install firefox ranger neovim flameshot
+	ranger --copy-config=all
+
+	mkdir $HOME/.config/nvim
+	cp $HOME/dotFiles/init.vim $HOME/.config/nvim/
+	# vim-plug
+	sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+	# Discord
+	cd $HOME/Installs
+	wget -O $HOME/Installs/discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
+	echo | sudo nala install ./discord.deb
+	cd $HOME
+
+	# vscode
+	cd $HOME/Installs
+	echo | sudo nala install software-properties-common apt-transport-https wget
+	wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+	echo | sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+	sudo apt install code
+	cd $HOME
+
+	# git ssh
+	echo -ne '\n\n\n' | ssh-keygen -t ed25519 -C "anthonynmui@gmail.com"
+	if [[!eval "$(ssh-agent -s)"]]; then
+		echo error with ssh
+		exit
+	fi
+	ssh-add ~/.ssh/id_ed25519
+
+	# timeshift
+	echo | sudo nala install timeshift
+	git clone https://github.com/wmutschl/timeshift-autosnap-apt.git /home/$USER/Installs/timeshift-autosnap-apt
+	cd /home/$USER/Installs/timeshift-autosnap-apt
+	sudo make install
+	cd $HOME
+	
+	echo \n installation done!
+}
+
+fedora_install () {
+	read -n1 -p "install? [Y,n]" doit
+	if [[$doit == 'y' || $doit =='Y']]; then
+		echo starting install
+	else
+		exit
+	fi
+}
+
+arch_install () {
+	read -n1 -p "install? [Y,n]" doit
+	if [[$doit == 'y' || $doit =='Y']]; then
+		echo starting install
+	else
+		exit
+	fi
+}
+
+echo select which distro
+read -p '1:debian 2:fedora 3:arch ' distro
+
+case $distro in  
+  1) deb_install ;; 
+  2) fedora_install ;; 
+  3) arch_install ;;
+  *) echo not a valid input ; exit;
+esac
+
+echo ===================================================================
+echo do timshift, kitty font, btop, teams, ranger, vscode sign in, git add ssh, clone personal files, nvim run:pluginstall, firefox plugin configs
+echo add ssh key to git
+cat ~/.ssh/id_ed25519.pub
