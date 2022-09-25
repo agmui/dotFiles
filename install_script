@@ -13,11 +13,10 @@ deb_install () {
         exit
     fi
 
-    read -p "password: " pass
 
 	# basic startup
     echo -e "${GREEN}updating and upgrading${ENDCOLOR}"
-	echo $pass | sudo apt -y update
+	sudo apt -y update
 	sudo apt -y upgrade
 	rm -rf Templates/ Desktop/ Music/ Videos/
 	mkdir Installs cs
