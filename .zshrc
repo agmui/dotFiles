@@ -4,6 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+bindkey -v
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -79,6 +81,7 @@ plugins=(
     lol
     colored-man-pages
     colorize
+    vi-mode   
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -112,10 +115,10 @@ source $ZSH/oh-my-zsh.sh
 alias v="nvim"
 alias na="sudo nala install" #"sudo pacman -S $1 || yay -S $1"
 alias ls="exa --icons -sold -snew"
-alias neofetch="neofetch --ascii_distro Regolith"
+# alias neofetch="neofetch --ascii_distro Regolith"
 # global aliases so it can be used in multi commands
 alias -g apt-get="nala"
-alias -g apt="nala"
+# alias -g apt="nala"
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
