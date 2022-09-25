@@ -13,9 +13,11 @@ deb_install () {
         exit
     fi
 
+    read -p "password: " pass
+
 	# basic startup
     echo -e "${GREEN}updating and upgrading${ENDCOLOR}"
-	sudo apt -y update
+	echo $pass | sudo apt -y update
 	sudo apt -y upgrade
 	rm -rf Templates/ Desktop/ Music/ Videos/
 	mkdir Installs cs
@@ -35,12 +37,13 @@ deb_install () {
 	# zsh
     echo -e "${GREEN}installing zsh${ENDCOLOR}"
 	sudo apt install -y zsh
+	echo $pass\n | sudo chsh -s $(which zsh)
 	echo $pass\n | chsh -s $(which zsh)
 	sudo apt install -y cargo 
 	yes | cago install exa
 
 	sudo apt install -y curl
-	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) RUNZSH='no'"
 	cp $HOME/dotFiles/.zshrc $HOME
 	# zsh plugins
 	sudo apt install -y autojump
