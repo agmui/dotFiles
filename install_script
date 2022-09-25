@@ -1,12 +1,13 @@
 #!/bin/bash
 deb_install () {
 	echo installing git, kitty, zsh, nala, firefox, nvim, Latex, Discord, ranger, flameshot, timeshift
-	read -n1 -p "install? [Y,n]" doit
-	if [[$doit == 'y' || $doit =='Y']]; then
-		echo starting install
-	else
-		exit
-	fi
+    read -p "install? [Y,n] " doit
+    if [[ $doit = '' || $doit = 'y' || $doit = 'Y' ]]; then
+        echo starting install...
+    else
+        echo exit
+        exit
+    fi
 
 	# basic startup
 	echo -ne '\n\n' | sudo apt update && sudo apt upgrade
