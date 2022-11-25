@@ -2,11 +2,11 @@
 
 | program | package   |
 | ------- | --------- |
-|shell    | zsh       |
+|shell    | fish      |
 |WM       | i3        |
 |Monitor  | polybar   |
 |Editor   | nvim      |
-|Terminal | alacritty |
-|wallpaper| feh       |
+|Terminal | kitty     |
+|wallpaper| nitrogen  |
 |launcher | rofi      |
 |compositor| picom    |
