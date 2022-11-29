@@ -1,5 +1,7 @@
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+    set EDITOR "nvim"
+    set TERM "kitty"
+
     # set fish_greeting 
     set -U budspencer_nogreeting # removes default prompt
     set -U fish_key_bindings fish_vi_key_bindings
