@@ -24,6 +24,10 @@ sudo dnf install nitrogen
 
 # autorandr and arandr
 sudo dnf install arandr autorandr
+# may need to add .config/autorandr/settings.ini to disable some flags ex:
+#[config]
+#skip-options=gamma, x-prop-broadcast_rgb
+
 echo "still need to manualy run autorandr -s <name>
 then 
 1. place this script (or better symlink it from autorandr location)
@@ -44,6 +48,11 @@ then
 # video wall paper
 # rounded corners
 # picom
+# add config jumper
+# wether desktop update
+# ew widgets
+# orc script
+# .config in git repo
 
 #ZSH or fish
 sudo dnf install fish 
@@ -66,7 +75,11 @@ mkdir ~/.config/nvim
 cp ~/dotFiles/init.vim ~/.config/nvim/
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-#TODO add fzf to vim
+#fzf to vim
+
+# may need to install nodejs with nvm and may need to apply .nvmrc for coc
+# source: https://github.com/nvm-sh/nvm#fish
+# else just coment out the let g: coc_node_path line
 
 # dunst
 sudo dnf install dunst
@@ -78,3 +91,6 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
 sudo dnf update
 sudo dnf install code
 echo remember to sign in with github acc
+
+# teams
+sudo dnf install teams
