@@ -8,10 +8,12 @@ call plug#begin('~/.vim/plugged')
     " Plug 'plasticboy/vim-markdown'
     Plug 'aklt/plantuml-syntax'
     Plug 'tyru/open-browser.vim'
-    Plug 'weirongxu/plantuml-previewer.vim'
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    " Plug 'weirongxu/plantuml-previewer.vim' " makrdown-preview already does this
+    " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown' }
     " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
     Plug 'nathanaelkane/vim-indent-guides'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 call plug#end()
 set number
 set ruler
@@ -21,7 +23,7 @@ syntax on
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-set t_Co=256
+set t_co=256
 set tabstop=4 shiftwidth=4 expandtab softtabstop=4 autoindent smartindent
 colorscheme darcula
 set termguicolors
@@ -30,7 +32,7 @@ set showmatch
 set ignorecase
 set backspace=indent,eol,start
 set nowrap
-set shortmess=O
+set shortmess=o
 set scrolloff=10
 set wildmenu
 set incsearch
@@ -49,6 +51,7 @@ set undodir=~/.config/nvim/undodir
 set undofile
 set clipboard=unnamed
 set clipboard=unnamedplus
+set visualbell
 
 "map <F10> :silent !pandoc % --pdf-engine=pdfroff -o %:r.pdf<CR>:redraw!<CR>
 "map <F11> :silent !zathura %:r.pdf &<CR>
@@ -128,3 +131,5 @@ augroup markdownSpell
     autocmd FileType markdown setlocal spell
     autocmd BufRead,BufNewFile *.md setlocal spell
 augroup END
+
+let g:coc_node_path = '$HOME/.local/share/nvm/v18.12.1/bin/node'
