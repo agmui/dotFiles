@@ -8,7 +8,9 @@ if status is-interactive
 
 
     ### ALIASES ###
-    alias v="vim"
+    alias dn="sudo dnf install"
+    alias ls="exa --icons -sold -snew"
+    alias v="nvim"
     alias ..="cd .."
     alias ...="cd ../.."
     #alias cat="bat"
@@ -22,10 +24,10 @@ set -g theme_display_git_dirty_verbose yes
 set -g theme_display_git_stashed_verbose yes
 set -g theme_display_git_default_branch yes
 set -g theme_git_default_branches master main
-set -g theme_git_worktree_support yes
+#set -g theme_git_worktree_support no
 set -g theme_use_abbreviated_branch_name no
 set -g theme_display_vagrant yes
-set -g theme_display_docker_machine no
+set -g theme_display_docker_machine yes
 set -g theme_display_k8s_context yes
 set -g theme_display_k8s_namespace yes
 set -g theme_display_aws_vault_profile yes
