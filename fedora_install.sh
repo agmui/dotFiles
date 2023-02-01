@@ -1,14 +1,25 @@
 sudo dnf upgrade
+#lol idk something I found
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf update
+
 sudo dnf install git make curl
 git clone https://github.com/agmui/dotFiles.git
 
 # i3-gaps
-sudo dnf install i3-gaps
+# i3-gaps merged with i3
+#sudo dnf install i3-gaps
 #add rounded corners
 #git clone https://github.com/terroo/i3-radius
 #cd i3-radius && sh build.sh
 #cd ..
 #rm -rf i3-radius
+
+# i3lock-color
+sudo dnf copr enable tokariew/i3lock-color
+sudo dnf remove i3lock
+sudo dnf install i3lock-color
+# run with bash ~/dotFiles/lock.sh
 
 # polybar
 sudo dnf install polybar
@@ -28,6 +39,10 @@ sudo dnf install arandr autorandr
 #[config]
 #skip-options=gamma, x-prop-broadcast_rgb
 
+
+# power manager
+# [follow guide](https://linrunner.de/tlp/installation/fedora.html)
+
 echo "still need to manualy run autorandr -s <name>
 then 
 1. place this script (or better symlink it from autorandr location)
@@ -38,21 +53,16 @@ then
 
 # maybe install pulseaudio or pipewire-pulseaudio
 #TODO:
-# rofi
-# xbacklight
-# custom notifications
 # howdy
 # low battery manager i.e. hibernation and lowpower mode
-# custorm start ff page
 # audio visuliser
 # video wall paper
-# rounded corners
 # picom
 # add config jumper
-# wether desktop update
-# ew widgets
+# weather desktop update
 # orc script
 # .config in git repo
+# dunst capslock notification in the middle
 
 #ZSH or fish
 sudo dnf install fish 
@@ -61,6 +71,9 @@ echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 #Fisher plugins
 cp ~/dotfiles/fish/ ~/.configs
+# colored man pages
+# fisher install decors/fish-colored-man
+
 fisher update
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
@@ -81,9 +94,20 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 # source: https://github.com/nvm-sh/nvm#fish
 # else just coment out the let g: coc_node_path line
 
+# eww
+# for fedora you may need to install gtk3-devel and all the other
+# devels that come with it
+sudo dnf install gtk3-devel
+
 # dunst
 sudo dnf install dunst
-cp -r ~/dotfiles/dunst ~/.config/dunst
+cp -r ~/dotFiles/dunst ~/.config/dunst
+
+# rofi
+sudo dnf install rofi 
+mkdir -p $HOME/.local/share/rofi/themes/
+cp -r ~/dotFiles/rofi/themes $HOME/.local/share/rofi/themes/
+cp -r ~/dotFiles/rofi/ ~/.config/rofi
 
 # vscode
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -94,3 +118,23 @@ echo remember to sign in with github acc
 
 # teams
 sudo dnf install teams
+
+# automation tools for running and auto keybord inputs
+sudo dnf install entr xdotool
+
+# to change gtk theme
+# https://wiki.archlinux.org/title/GTK#Configuration
+
+# for verilog compile and view waveform
+sudo dnf install iverilog gtkwave
+# guide: https://www.youtube.com/watch?v=g7gvQkFdODA&t=2622s
+
+
+# discord
+# add `"SKIP_HOST_UPDATE": true` into ~/.config/discord/settings.json
+
+# tesseract ocr
+sudo dnf install tesseract
+
+# postman
+# https://learning.postman.com/docs/getting-started/installation-and-updates/#installing-postman-on-linux
