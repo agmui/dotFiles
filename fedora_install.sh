@@ -1,4 +1,4 @@
-# note cs servver gauss.csse.rose-hulman.edu
+# note cs server: ssh muian@gauss.csse.rose-hulman.edu
 sudo dnf upgrade
 #lol idk something I found
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
