@@ -1,3 +1,4 @@
+# note cs servver gauss.csse.rose-hulman.edu
 sudo dnf upgrade
 #lol idk something I found
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
@@ -138,3 +139,14 @@ sudo dnf install tesseract
 
 # postman
 # https://learning.postman.com/docs/getting-started/installation-and-updates/#installing-postman-on-linux
+#
+# TODO find a good img viewer
+
+#  distrobox
+#  add to bashrc `export TERM=vt100`
+
+# fedora timesnew romaan font install
+# https://discussion.fedoraproject.org/t/help-installing-microsoft-fonts-like-arial-times-new-roman/78169/7
+# https://li.nux.ro/download/nux/dextop/el7/x86_64/webcore-fonts-3.0-1.noarch.rpm 79
+# https://li.nux.ro/download/nux/dextop/el7/x86_64/webcore-fonts-vista-3.0-1.noarch.rpm
+# `sudo dnf install ./webcore-fonts*`
