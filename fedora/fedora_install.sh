@@ -62,7 +62,6 @@ then
 # add config jumper
 # weather desktop update
 # orc script
-# .config in git repo
 # dunst capslock notification in the middle
 
 #ZSH or fish
