@@ -4,7 +4,7 @@ echo "---create folders---"
 mkdir ~/Downloads
 mkdir ~/Documents
 mkdir ~/Pictures
-cp ../wallpapers ~/Pictures
+cp -r ../wallpapers ~/Pictures
 mkdir ~/Pictures/screenshot
 mkdir ~/Installs
 mkdir ~/cs
@@ -18,6 +18,7 @@ yes | sudo nala upgrade
 
 #---Commands---
 ##essential commands
+echo "comands=========================================================================================="
 echo "---install commands---"
 yes | sudo nala install --no-install-recommends fish build-essential python3 python3-pip python3-dev ranger curl wget git tlp powertop htop \
 network-manager net-tools openssh-server proxychains openssl ca-certificates \
@@ -29,6 +30,7 @@ yes | sudo nala purge needrestart
 # fisher install decors/fish-colored-man
 
 #---GUI---
+echo "gui=========================================================================================="
 echo "---install GUI apps---"
 ##Desktop Environment
 yes | sudo nala install --no-install-recommends xinit light picom arandr blueman \
@@ -45,6 +47,7 @@ fi
 ssh-add ~/.ssh/id_ed25519
 
 
+echo "i3=========================================================================================="
 yes | sudo nala install xserver-xorg i3 i3status polybar rxvt-unicode x11-xserver-utils dmenu libgtk-3-0 xss-lock \
 xarchiver thunar gvfs autofs gvfs-backends thunar-archive-plugin ntfs-3g \
 fcitx5 fcitx5-mozc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra ttf-ancient-fonts-symbola fonts-noto-color-emoji \
@@ -68,4 +71,5 @@ yes | sudo nala install code
 
 echo "follow this guide for rose vpn: https://wiki.rhlug.org/index.php/Accessing_the_Off-Campus_VPN"
 
+echo "=========================================================================================="
 echo "---Installation completed---"
