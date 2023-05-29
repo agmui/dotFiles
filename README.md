@@ -2,8 +2,9 @@
 
 run:
 ```
-git clone 
-./install_script
+git clone https://github.com/agmui/dotFiles
+chmod +x dotFiles/install_script
+./dotFiles/install_script
 ```
 
 | program | package   |
