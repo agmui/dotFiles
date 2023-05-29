@@ -1,0 +1,24 @@
+(defwindow topBar
+  :monitor 0
+  :geometry (geometry :x "0px"
+                      :y "0px"
+                      :width "90%"
+                      :height "30px"
+                      :anchor "top center")
+  :stacking "fg"
+  ; :reserve (struts :distance "40px" :side "top"); reserve space for bar
+  :windowtype "dock"
+  :wm-ignore false
+(bar))
+
+(defwindow logoutWin
+  :monitor 0
+  :geometry (geometry :x "0px"
+                      :y "0px"
+                      :width "100px"
+                      :height "30px"
+                      :anchor "center center")
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore false
+(powermenu))

@@ -1,0 +1,13 @@
+(defpoll workspaces :interval "1s" "scripts/workspace")
+(defpoll vol :interval "1s" "scripts/getvol")
+(defpoll ram :interval "1s" "scripts/getram")
+(defpoll batStatus :interval "2s" "cat /sys/class/power_supply/BAT0/status")
+(defpoll bat :interval "2s" "scripts/bat.sh")
+(defpoll time :interval "1s" "date +'%x %c'") ;TODO fix poll
+(defpoll winName :interval "1s" "xdotool getactivewindow getwindowname") ;TODO fix poll
+; xkeyboard (numlock)
+(defvar logBool "false")
+(defvar btnClass "unhover")
+(defvar btnClass2 "unhover")
+(defvar btnClass3 "unhover")
+(defvar btnClass4 "unhover")

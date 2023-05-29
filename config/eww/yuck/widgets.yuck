@@ -1,0 +1,44 @@
+(defwidget bar[]
+  (box :class "bar"
+    (left)
+    (right)))
+
+(defwidget left[]
+  (box :halign "start"
+    (workspaces)
+    (label :text "${winName}")
+    ))
+
+(defwidget workspaces[]
+ (literal :halign "center" :content workspaces))
+
+(defwidget right[]
+  (box :halign "end"
+    (label :text "ram: ${ram}")
+    (label :text "vol: ${vol}")
+    (coolbatterycircle)
+    (label :text "${time}")))
+    ;add system tray to see what is running
+
+
+(defwidget coolbatterycircle[]
+  (box
+    (label :text "${batStatus}")
+    (overlay :tooltip "Battery; ${bat}"
+      (circular-progress :class "outcircle" :value "${bat}" :thickness "13" :halign "center" :valign "center")
+      (circular-progress :class "incircle" :value "100" :thickness "10" :halign "center" :valign "center")
+      (label :class "myText" :text "${bat}%" :halign "center" :valign "center"))))
+
+
+
+; ====== make esc quit window ========
+(defwidget powermenu[]
+    (box
+        (eventbox :onhover "./eww -c ~/.config/eww update btnClass=hover" :style "color: #cc241d" :onhoverlost "./eww -c ~/.config/eww update btnClass=unhover"
+          (button :class "${btnClass}" :onclick "scripts/logoutWin.sh --shutdown" ""))
+        (eventbox :onhover "./eww -c ~/.config/eww update btnClass2=hover" :style "color: #d79921" :onhoverlost "./eww -c ~/.config/eww update btnClass2=unhover"
+          (button :class "${btnClass2}" :onclick "scripts/logoutWin.sh --reboot" ""))
+        (eventbox :onhover "./eww -c ~/.config/eww update btnClass3=hover" :style "color: #a89984" :onhoverlost "./eww -c ~/.config/eww update btnClass3=unhover"
+          (button :class "${btnClass3}" :onclick "scripts/logoutWin.sh --logout" ""))
+        (eventbox :onhover "./eww -c ~/.config/eww update btnClass4=hover" :style "color: #fbf1c7" :onhoverlost "./eww -c ~/.config/eww update btnClass4=unhover"
+          (button :class "${btnClass4}" :onclick "scripts/logoutWin.sh --suspend" ""))))

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%' | head -1
+output=($(amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $4 $2 }' | head -1))
+text="off*"
+if [[ $output == $text ]]; then
+    echo muted $output| tr -d 'ofn'
+    exit
+fi
+echo $output| tr -d 'ofn'

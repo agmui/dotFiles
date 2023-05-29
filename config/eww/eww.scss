@@ -1,0 +1,54 @@
+$font: "monospace";
+$icon-font: "Material\-Design\-Iconic\-Font";
+
+$background : #282A2E;
+$background-alt : #373B41;
+$foreground : #C5C8C6;
+$primary : #F0C674;
+$secondary : #8ABEB7;
+$alert : #A54242;
+$disabled : #707880;
+
+
+*{
+    all: unset;
+}
+
+.bar {
+    background-color: $background;
+    border-radius: 50px;
+    margin: 6px;
+    padding: 3px;
+    font-size: 15;
+}
+
+.myText {
+    padding: 10px;
+    margin: 10px;
+    font-family: $icon-font;
+}
+
+.unhover {
+    margin: 10px;
+    font-family: $icon-font;
+    font-size: 100px;
+}
+
+.hover {
+    margin: 10px;
+    font-family: $icon-font;
+    font-size: 100px;
+    // color: blue;
+}
+
+.outcircle {
+    background: gray;
+    color: red;
+}
+.incircle {
+    color: black;
+}
+
+.wsFocus {
+    color: $primary;
+}

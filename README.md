@@ -1,5 +1,11 @@
 # dotFiles
 
+run:
+```
+git clone 
+./install_script
+```
+
 | program | package   |
 | ------- | --------- |
 |shell    | fish      |

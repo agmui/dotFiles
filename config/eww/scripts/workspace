@@ -1,0 +1,33 @@
+#!/bin/sh
+
+active=`xdotool get_desktop`
+total=`xdotool get_num_desktops`
+output="(box :class \"works-container\" :valign \"fill\" :orientation \"h\" "
+
+ws[0]="1"
+ws[1]="2"
+ws[2]="3"
+ws[3]="4"
+ws[4]="5"
+ws[5]="6"
+ws[6]="7"
+ws[7]="8"
+ws[8]="9"
+ws[9]="10"
+
+size=${#ws[@]}
+
+for i in $(seq 0 $size)
+do
+    if [[ $total -eq i ]]; then
+        break
+    fi
+    if [[ $active -eq i ]]; then
+        output="$output(button :onclick \"xdotool set_desktop ${i}\" :class \"wsFocus\" \"${ws[i]}\") "
+    else
+        output="$output(button :onclick \"xdotool set_desktop ${i}\" :class \"ws\" \"${ws[i]}\") "
+    fi
+done
+output="$output)"
+
+echo $output
