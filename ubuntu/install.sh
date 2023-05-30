@@ -34,9 +34,9 @@ echo "gui=======================================================================
 echo "---install GUI apps---"
 ##Desktop Environment
 yes | sudo nala install --no-install-recommends xinit light picom arandr blueman \
-nitrogen vlc ristretto screengrab onlyoffice dunst flameshot kitty dunst
+nitrogen vlc ristretto screengrab  dunst flameshot kitty dunst #onlyoffice
 
-ranger --copy-config=all
+# ranger --copy-config=all
 
 ## git ssh
 echo -ne '\n\n\n' | ssh-keygen -t ed25519 -C "anthonynmui@gmail.com"
@@ -52,7 +52,7 @@ yes | sudo nala install xserver-xorg i3 i3status polybar rxvt-unicode x11-xserve
 xarchiver thunar gvfs autofs gvfs-backends thunar-archive-plugin ntfs-3g \
 fcitx5 fcitx5-mozc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra ttf-ancient-fonts-symbola fonts-noto-color-emoji \
 qemu-system libvirt-clients libvirt-daemon-system \
-filezilla thunderbird arandr autorandr tesseract firefox
+filezilla thunderbird arandr autorandr firefox
 
 ##Visual Studio Code
 yes | curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/ms-vscode-keyring.gpg
