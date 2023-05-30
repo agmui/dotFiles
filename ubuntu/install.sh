@@ -23,7 +23,7 @@ echo "---install commands---"
 yes | sudo nala install --no-install-recommends fish build-essential python3 python3-pip python3-dev ranger curl wget git tlp powertop htop \
 network-manager net-tools openssh-server proxychains openssl ca-certificates \
 software-properties-common apt-transport-https ppa-purge \
-neofetch make cmake fzf fd bat entr xdotool
+neofetch make cmake fzf bat entr xdotool #fd
 yes | sudo nala purge needrestart
 
 # colored man pages TODO:
@@ -48,7 +48,13 @@ ssh-add ~/.ssh/id_ed25519
 
 
 echo "i3=========================================================================================="
-yes | sudo nala install xserver-xorg i3 i3status polybar rxvt-unicode x11-xserver-utils dmenu libgtk-3-0 xss-lock \
+curl https://baltocdn.com/i3-window-manager/signing.asc | sudo apt-key add -
+yes | sudo nala install apt-transport-https --yes
+echo "deb https://baltocdn.com/i3-window-manager/i3/i3-autobuild/ all main" | sudo tee /etc/apt/sources.list.d/i3-autobuild.list
+yes | sudo nala update
+yes | sudo nala install i3
+
+yes | sudo nala install xserver-xorg i3status polybar rxvt-unicode x11-xserver-utils dmenu libgtk-3-0 xss-lock \
 xarchiver thunar gvfs autofs gvfs-backends thunar-archive-plugin ntfs-3g \
 fcitx5 fcitx5-mozc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra ttf-ancient-fonts-symbola fonts-noto-color-emoji \
 qemu-system libvirt-clients libvirt-daemon-system \

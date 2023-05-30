@@ -41,7 +41,7 @@ deb_install () {
 	yes | sudo nala install --no-install-recommends pavucontrol pulseaudio-utils
 
 	./flatpak.sh
-	./advanced.sh
+	# ./advanced.sh
 
 	cd ..
 
