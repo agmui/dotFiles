@@ -1,25 +1,15 @@
 output DP-1-1
 off
 output HDMI-1-0
-crtc 0
-mode 1920x1080
-pos 1368x0
-primary
-rate 144.00
-x-prop-non_desktop 0
+mode 1920x1200
+pos 1920x0
+rate 59.95
 output DP-1-0
-crtc 4
 mode 1920x1080
-pos 3288x0
+pos 0x120
 rate 60.00
-x-prop-non_desktop 0
 output eDP-1
-crtc 1
-mode 1368x768
-pos 0x312
-rate 59.88
-x-prop-broadcast_rgb Automatic
-x-prop-colorspace Default
-x-prop-max_bpc 12
-x-prop-non_desktop 0
-x-prop-scaling_mode Full aspect
+mode 1920x1080
+pos 3840x305
+primary
+rate 60.00
