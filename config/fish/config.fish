@@ -3,7 +3,7 @@ if status is-interactive
     set TERM "kitty"
 
     # set fish_greeting 
-    set -U fish_greeting  # removes default prompt
+    set -U fish_greeting no # removes default prompt
     set -U fish_key_bindings fish_vi_key_bindings
 
 
@@ -49,12 +49,12 @@ set -g theme_title_use_abbreviated_path no
 set -g theme_date_format "+%a %H:%M"
 set -g theme_date_timezone America/Los_Angeles
 set -g theme_avoid_ambiguous_glyphs yes
-set -g theme_powerline_fonts no
+set -g theme_powerline_fonts yes
 set -g theme_nerd_fonts yes
 set -g theme_show_exit_status yes
 set -g theme_display_jobs_verbose yes
 set -g default_user your_normal_user
-set -g theme_color_scheme gruvbox
+set -g theme_color_scheme nord
 set -g fish_prompt_pwd_dir_length 0
 set -g theme_project_dir_length 1
 set -g theme_newline_cursor yes
