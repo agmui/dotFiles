@@ -3,12 +3,12 @@ if status is-interactive
     set TERM "kitty"
 
     # set fish_greeting 
-    set -U fish_greeting no # removes default prompt
+    set -U fish_greeting  # removes default prompt
     set -U fish_key_bindings fish_vi_key_bindings
 
 
     ### ALIASES ###
-    alias dn="sudo dnf install"
+    alias na="sudo nala install"
     alias ls="exa --icons -sold -snew"
     alias v="nvim"
     alias ..="cd .."
