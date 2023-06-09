@@ -23,3 +23,13 @@ done
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
 fish
+
+# install fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+# install all plugins
+cat ~/dotfiles/config/fish/fish_plugins | fisher install
+
+# install omf
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+# install theme
+omf install bobthefish

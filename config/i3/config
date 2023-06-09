@@ -287,6 +287,9 @@ exec --no-startup-id autorandr -c &
 # picom
 #exec --no-startup-id picom &
 
+# conky
+exec --no-startup-id ~/.config/conky/conky.conf
+
 # jpn keyboard
 #exec --no-startup-id fcitx -d
 

@@ -26,6 +26,14 @@ software-properties-common apt-transport-https ppa-purge \
 neofetch make cmake fzf bat entr xdotool exa #fd
 yes | sudo nala purge needrestart
 
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip -P ~/.fonts/
+unzip ~/.fonts/JetBrainsMono.zip
+
+#nvim
+yes | sudo add-apt-repository ppa:neovim-ppa/unstable
+yes | sudo nala update
+yes | sudo nala install neovim
+
 # colored man pages TODO:
 # fisher install decors/fish-colored-man
 
@@ -34,7 +42,9 @@ echo "gui=======================================================================
 echo "---install GUI apps---"
 ##Desktop Environment
 yes | sudo nala install --no-install-recommends xinit lightdm picom arandr blueman \
-nitrogen vlc ristretto screengrab  dunst flameshot kitty #onlyoffice
+nitrogen vlc ristretto screengrab  dunst flameshot kitty btop light #onlyoffice
+
+sudo wget https://github.com/JezerM/web-greeter/releases/latest | sudo nala install
 
 sudo dpkg-reconfigure lightdm # set lightdm as default
 
@@ -56,14 +66,14 @@ echo "deb http://debian.sur5r.net/i3/ $(grep '^DISTRIB_CODENAME=' /etc/lsb-relea
 yes | sudo nala update
 yes | sudo nala install i3
 
-yes | sudo nala install xserver-xorg i3status polybar rxvt-unicode x11-xserver-utils dmenu libgtk-3-0 xss-lock \
+yes | sudo nala install xserver-xorg i3status polybar rxvt-unicode x11-xserver-utils dmenu rofi libgtk-3-0 xss-lock \
 xarchiver thunar gvfs autofs gvfs-backends thunar-archive-plugin ntfs-3g \
 fcitx5 fcitx5-mozc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra ttf-ancient-fonts-symbola fonts-noto-color-emoji \
 qemu-system libvirt-clients libvirt-daemon-system \
-filezilla thunderbird arandr autorandr
+filezilla thunderbird arandr autorandr lxappearance
 
 #==============================
-#firefox install
+##firefox install
 #https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04
 sudo add-apt-repository ppa:mozillateam/ppa
 
@@ -76,6 +86,30 @@ Pin-Priority: 1001
 echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
 
 sudo apt install firefox
+
+#==============================
+##Theming
+#guide: https://itsfoss.com/i3-customization/#change-theme-and-icons-in-the-i3-window-manager
+
+# gtk theme
+wget https://github.com/catppuccin/gtk/releases/download/v0.6.0/Catppuccin-Frappe-Standard-Maroon-Dark.zip -P ~/.themes/
+unzip ~/.themes/Catppuccin-Frappe-Standard-Maroon-Dark.zip
+
+# icons
+git clone https://github.com/catppuccin/papirus-folders.git
+sudo cp -r papirus-folders/src/* /usr/share/icons/Papirus
+./papirus-folders -C cat-frappe-maroon --theme Papirus-Dark
+
+# cursor
+# git clone https://github.com/yeyushengfan258/ArcMidnight-Cursors.git
+# cd ArcMidnight-Cursors
+# ./build.sh
+# mkdir -p ~/.icons/ArcMidnight-cursors/
+# cp dist ~/.icons/ArcMidnight-cursors/
+# gsettings set org.gnome.desktop.interface cursor-theme 'ArcMidnight-Cursors'
+# cd $HOME
+git clone https://github.com/catppuccin/cursors.git
+unzip cursors/Catppuccin-Frappe-Maroon-Cursors.zip -d ~/.icons
 
 #==============================
 

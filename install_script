@@ -56,6 +56,10 @@ deb_install () {
 	4. repeat steps 2-3 for any profile you wish"
 
 	echo " to change gtk theme: https://wiki.archlinux.org/title/GTK#Configuration"
+
+	echo "move lightdm.conf to /etc/lightdm/"
+	echo "also remember to make a dock_setup.sh in /usr/shar/dock_setup.sh for lightdm"
+	echo "go here for lighdm theme https://github.com/Litarvan/lightdm-webkit-theme-litarvan"
 }
 
 fedora_install () {
