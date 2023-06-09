@@ -1,0 +1,54 @@
+-- Config_Settings: http://conky.sourceforge.net/config_settings.html
+-- Config_Variables: http://conky.sourceforge.net/variables.html
+
+
+conky.config = {
+
+  -- Conky --
+
+  background = true,
+  update_interval = 1,
+  total_run_times = 0,  
+  override_utf8_locale = true,  
+  double_buffer = true,
+  no_buffers = true,
+  imlib_cache_size=0,  
+  text_buffer_size = 256,
+
+  -- Window --
+
+  own_window = true,
+  own_window_colour = '303446',
+  own_window_class = 'Conky',
+  own_window_argb_visual = true,
+  -- own_window_argb_count = 0,
+  own_window_argb_value = 0,
+  own_window_type = 'override',
+  own_window_transparent = true,
+  own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+  maximum_width = 1920,
+  alignment = 'top_middle',
+
+  -- Graphics -- 
+
+  draw_shades = false,
+  draw_outline = false,
+  draw_borders = false,
+  draw_graph_borders = false,
+  
+  -- Text --
+
+  use_xft = true,
+  xftalpha = 1,
+  uppercase = true,
+  pad_percents = 0,
+
+};
+
+
+conky.text = [[
+#				-- CLOCK --
+${color D6D6D6}${alignc}${font Anurati:bold:size= 58}${time %A %B}
+${color D6D6D6}${alignc}${font Abnea:bold:size= 27}${time %D}
+${color D6D6D6}${alignc}${font Abnea:size= 48}${time %I:%M %p}
+]];
