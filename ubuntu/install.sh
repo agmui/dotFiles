@@ -50,6 +50,11 @@ sudo dpkg-reconfigure lightdm # set lightdm as default
 
 # ranger --copy-config=all
 
+# only office
+wget http://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb
+yes | sudo nala install ./onlyoffice-desktopeditors_amd64.deb
+echo "you can change to dark mode in settings"
+
 ## git ssh
 echo -ne '\n\n\n' | ssh-keygen -t ed25519 -C "anthonynmui@gmail.com"
 if [[!eval "$(ssh-agent -s)"]]; then

@@ -60,6 +60,13 @@ deb_install () {
 	echo "move lightdm.conf to /etc/lightdm/"
 	echo "also remember to make a dock_setup.sh in /usr/shar/dock_setup.sh for lightdm"
 	echo "go here for lighdm theme https://github.com/Litarvan/lightdm-webkit-theme-litarvan"
+
+  echo "mic setup guide
+        open pavucontrol  
+        go to the configurations tab  
+        go down to Comet Lake PCH cAVS  
+        select Profile: to Pro Audio
+        Then go to the Input Devices tab and talk into the mic"
 }
 
 fedora_install () {
