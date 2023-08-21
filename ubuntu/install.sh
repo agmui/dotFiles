@@ -116,9 +116,16 @@ sudo cp -r papirus-folders/src/* /usr/share/icons/Papirus
 git clone https://github.com/catppuccin/cursors.git
 unzip cursors/Catppuccin-Frappe-Maroon-Cursors.zip -d ~/.icons
 
+## RANDOM Thunar file manager nvim fix
+# if in Thunar and you try to open a file with nvim but you get the wrong terminal
+# do this: https://askubuntu.com/questions/788736/open-vim-in-xfce4-terminal-from-thunar
+# change the /usr/shar/application/nvim.desktop file on line `Exec=nvim %F` to `Exec=kitty nvim %F`
+
+
 #==============================
 
 ##Visual Studio Code
+# guide of how to install with apt https://code.visualstudio.com/docs/setup/linux
 yes | curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/ms-vscode-keyring.gpg
 yes | echo "deb [arch=amd64 signed-by=/usr/share/keyrings/ms-vscode-keyring.gpg] https://packages.microsoft.com/repos/vscode stable main" | sudo tee /etc/apt/sources.list.d/vscode.list
 yes | sudo nala update

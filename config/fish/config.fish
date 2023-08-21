@@ -6,7 +6,6 @@ if status is-interactive
     set -U fish_greeting no # removes default prompt
     set -U fish_key_bindings fish_vi_key_bindings
 
-
     ### ALIASES ###
     alias na="sudo nala install"
     alias ls="exa --icons -sold -snew"
@@ -14,6 +13,7 @@ if status is-interactive
     alias ..="cd .."
     alias ...="cd ../.."
     #alias cat="bat"
+    alias rm="trash-rm"#http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html
 end
 
 set -g theme_display_git yes
@@ -59,4 +59,20 @@ set -g fish_prompt_pwd_dir_length 0
 set -g theme_project_dir_length 1
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt '\e[32m❯ \e[0m'
+
+set -x PICO_SDK_PATH /home/agmui/cs/pico/pico-sdk
+set -x PICO_EXAMPLES_PATH /home/agmui/cs/pico/pico-examples
+set -x PICO_EXTRAS_PATH /home/agmui/cs/pico/pico-extras
+set -x PICO_PLAYGROUND_PATH /home/agmui/cs/pico/pico-playground
+
+
+#source /home/agmui/miniconda3/etc/fish/conf.d/conda.fish
+#set _CONDA_ROOT "/home/agmui/miniconda3"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/agmui/miniconda3/bin/conda
+    eval /home/agmui/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+end
+# <<< conda initialize <<<
 
