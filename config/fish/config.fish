@@ -65,6 +65,8 @@ set -x PICO_EXAMPLES_PATH /home/agmui/cs/pico/pico-examples
 set -x PICO_EXTRAS_PATH /home/agmui/cs/pico/pico-extras
 set -x PICO_PLAYGROUND_PATH /home/agmui/cs/pico/pico-playground
 
+set -x WOKWI_CLI_TOKEN wok_3i77mFwBNeaARjaAg6OinU2QuzJcWXDNebf28143
+
 
 #source /home/agmui/miniconda3/etc/fish/conf.d/conda.fish
 #set _CONDA_ROOT "/home/agmui/miniconda3"

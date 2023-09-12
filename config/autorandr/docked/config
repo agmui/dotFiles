@@ -1,17 +1,15 @@
+output DP-1-1
+off
 output HDMI-1-0
-mode 1920x1200
-pos 1920x0
+mode 1920x1080
+pos 1368x0
 primary
-rate 59.95
+rate 60.00
 output DP-1-0
 mode 1920x1080
-pos 0x120
-rate 60.00
-output DP-1-1
-mode 1920x1080
-pos 3840x120
+pos 3288x239
 rate 60.00
 output eDP-1
-mode 1920x1080
-pos 5760x120
+mode 1368x768
+pos 0x312
 rate 60.00

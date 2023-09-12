@@ -16,6 +16,8 @@ echo "---install apps---"
 yes | sudo nala update
 yes | sudo nala upgrade
 
+# random lid suspend https://askubuntu.com/questions/15520/how-can-i-tell-ubuntu-to-do-nothing-when-i-close-my-laptop-lid
+
 #---Commands---
 ##essential commands
 echo "comands=========================================================================================="
@@ -42,7 +44,7 @@ echo "gui=======================================================================
 echo "---install GUI apps---"
 ##Desktop Environment
 yes | sudo nala install --no-install-recommends xinit lightdm picom arandr blueman \
-nitrogen vlc ristretto screengrab  dunst flameshot kitty btop light #onlyoffice
+nitrogen vlc ristretto screengrab  dunst flameshot kitty btop light pinita #onlyoffice
 
 sudo wget https://github.com/JezerM/web-greeter/releases/latest | sudo nala install
 

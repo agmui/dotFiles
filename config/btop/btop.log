@@ -8,3 +8,7 @@ theme[temp_mid]=
 
 # Process box color gradient for threads, mem and cpu usage (Sapphire -> Mauve)
 theme[process_start]=
+
+2023/09/07 (01:55:22) | ===> btop++ v.1.2.3
+2023/09/07 (01:55:22) | ERROR: Stall in Runner thread, restarting!
+2023/09/07 (01:56:12) | ERROR: Stall in Runner thread, restarting!

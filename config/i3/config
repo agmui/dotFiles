@@ -91,7 +91,7 @@ bindsym $mod+Shift+escape exec --no-startup-id /home/agmui/.config/i3/i3-new-wor
 
 # 4.29. Automatic back-and-forth when switching to the current workspace
 # when on workspace 1 press mod+2 twice to go back and forth
-workspace_auto_back_and_forth yes
+#workspace_auto_back_and_forth yes
 
 
 # alternatively, you can use the cursor keys:
@@ -155,10 +155,15 @@ set $workspace8 "8: "
 set $workspace9 "9: "
 set $workspace10 "10: "
 
-# seto default workspace on screens
-workspace 1 output DP-1-0
+# --set to default workspace on screens--
+#home config
+#workspace 1 output DP-1-0
+#workspace 2 output HDMI-1-0
+#workspace 3 output DP-1-1
+#school config
+workspace 1 output eDP-1
 workspace 2 output HDMI-1-0
-workspace 3 output DP-1-1
+workspace 3 output DP-1-0
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -298,9 +303,16 @@ exec --no-startup-id sudo tlp start &
 
 #exec --no-startup-id sudo xfce4-power-manager &
 
+# low bat notification
+exec --no-startup-id /home/agmui/Installs/i3-battery-popup/i3-battery-popup -n -s
+
 # Hide the mouse pointer if unused for a duration
 #set_from_resource $i3-wm.program.unclutter i3-wm.program.unclutter /usr/bin/unclutter -b
 #exec --no-startup-id $i3-wm.program.unclutter
+
+#TODO: fix alsa
+exec --no-startup-id alsactl -L restore
+#exec --no-startup-id alsactl -U -L -f /var/lib/alsa/asound.state restore
 
 # always have discord open in ws 8
 for_window [class="discord"] move container to workspace 8

@@ -40,6 +40,8 @@ deb_install () {
 	wireplumber{,-doc} gir1.2-wp-0.4 libwireplumber-0.4-{0,dev} 
 	yes | sudo nala install --no-install-recommends pavucontrol pulseaudio-utils
 
+  # maybe do this for ubuntu: sudo nala install alsa-ucm-conf
+
 	./flatpak.sh
 	# ./advanced.sh
 
