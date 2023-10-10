@@ -67,6 +67,9 @@ set -x PICO_PLAYGROUND_PATH /home/agmui/cs/pico/pico-playground
 
 set -x WOKWI_CLI_TOKEN wok_3i77mFwBNeaARjaAg6OinU2QuzJcWXDNebf28143
 
+#how to add to PATH
+#set -x fish_user_paths /home/agmui/cs/Robomasters/tools/gcc-arm-none-eabi-10.3-2021.10/bin
+
 
 #source /home/agmui/miniconda3/etc/fish/conf.d/conda.fish
 #set _CONDA_ROOT "/home/agmui/miniconda3"
