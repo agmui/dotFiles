@@ -60,6 +60,8 @@ set -g theme_project_dir_length 1
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt '\e[32m❯ \e[0m'
 
+set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
+
 set -x PICO_SDK_PATH /home/agmui/cs/pico/pico-sdk
 set -x PICO_EXAMPLES_PATH /home/agmui/cs/pico/pico-examples
 set -x PICO_EXTRAS_PATH /home/agmui/cs/pico/pico-extras
