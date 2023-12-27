@@ -4,7 +4,7 @@ output HDMI-1-0
 mode 1920x1080
 pos 1368x0
 primary
-rate 60.00
+rate 144.00
 output DP-1-0
 mode 1920x1080
 pos 3288x239

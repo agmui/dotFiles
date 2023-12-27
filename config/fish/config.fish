@@ -69,6 +69,10 @@ set -x PICO_PLAYGROUND_PATH /home/agmui/cs/pico/pico-playground
 
 set -x WOKWI_CLI_TOKEN wok_3i77mFwBNeaARjaAg6OinU2QuzJcWXDNebf28143
 
+set -x GOPATH /home/agmui/go
+set -Ua fish_user_paths /usr/local/go/bin
+set -Ua fish_user_paths $GOPATH/bin
+
 #how to add to PATH
 #set -x fish_user_paths /home/agmui/cs/Robomasters/tools/gcc-arm-none-eabi-10.3-2021.10/bin
 

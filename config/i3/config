@@ -26,6 +26,8 @@ font pango:DejaVu Sans Mono 8
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+popup_during_fullscreen smart
+
 #i3gaps stuff#############################
 # window boarder
 default_border pixel 4
@@ -313,6 +315,9 @@ exec --no-startup-id /home/agmui/Installs/i3-battery-popup/i3-battery-popup
 #TODO: fix alsa
 exec --no-startup-id alsactl -L restore
 #exec --no-startup-id alsactl -U -L -f /var/lib/alsa/asound.state restore
+
+#TODO: use for next install
+#exec --no-startup-id nm-applet
 
 # always have discord open in ws 8
 for_window [class="discord"] move container to workspace 8

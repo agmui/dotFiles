@@ -148,3 +148,6 @@ echo "follow this guide for rose vpn: https://wiki.rhlug.org/index.php/Accessing
 
 echo "=========================================================================================="
 echo "---Installation completed---"
+echo "REMEMBER TO CHECK xrandr"
+echo "THE AOC MONITOR NEEDS TO RUN AT 144 TO NOT HAVE SCREEN TEARING"
+
