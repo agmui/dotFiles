@@ -28,10 +28,21 @@ software-properties-common apt-transport-https ppa-purge \
 neofetch make cmake fzf bat entr xdotool exa #fd
 yes | sudo nala purge needrestart
 
+# tlpui thing
+# sudo add-apt-repository -y ppa:linuxuprising/apps
+# sudo apt update
+# sudo apt install tlpui
+
+# setup backlight
+sudo usermod -a -G video ${USER} # add user to video group
+sudo nala install brightnessctl
+
+
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip -P ~/.fonts/
 unzip ~/.fonts/JetBrainsMono.zip
 
 #nvim
+# random issue with jetbrains autocopy on selection https://intellij-support.jetbrains.com/hc/en-us/community/posts/360004165300/comments/14734331884946
 yes | sudo add-apt-repository ppa:neovim-ppa/unstable
 yes | sudo nala update
 yes | sudo nala install neovim

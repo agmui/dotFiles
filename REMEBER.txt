@@ -1,2 +1,5 @@
 REMEMBER TO CHECK xrandr
 THE AOC MONITOR NEEDS TO RUN AT 144 TO NOT HAVE SCREEN TEARING
+
+ssh muian@gebru.csse.rose-hulman.edu
+ssh muian@gauss.csse.rose-hulman.edu

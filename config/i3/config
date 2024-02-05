@@ -246,8 +246,8 @@ bindsym $mod+r mode "resize"
 # use xbacklight if light does not work
 #bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 #bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec brightnessctl set +10% # light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%- # light -U 10 # decrease screen brightness
 
 
 # Media player controls
