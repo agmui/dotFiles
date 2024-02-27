@@ -33,6 +33,11 @@ yes | sudo nala purge needrestart
 # sudo apt update
 # sudo apt install tlpui
 
+# disable cloud-init
+# https://askubuntu.com/questions/1321968/ubuntu-server-20-04-2-lts-hangs-after-bootup-cloud-init-1781-yyyy-mm-dd-h
+# https://cloudinit.readthedocs.io/en/latest/explanation/boot.html
+sudo touch /etc/cloud/cloud-init.disabled
+
 # setup backlight
 sudo usermod -a -G video ${USER} # add user to video group
 sudo nala install brightnessctl
