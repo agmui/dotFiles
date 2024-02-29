@@ -166,4 +166,5 @@ echo "==========================================================================
 echo "---Installation completed---"
 echo "REMEMBER TO CHECK xrandr"
 echo "THE AOC MONITOR NEEDS TO RUN AT 144 TO NOT HAVE SCREEN TEARING"
+echo "also set autorandr --default <setup>"
 
