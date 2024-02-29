@@ -95,6 +95,14 @@ fcitx5 fcitx5-mozc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra ttf-ancient-fo
 qemu-system libvirt-clients libvirt-daemon-system \
 filezilla thunderbird arandr autorandr lxappearance
 
+# to set horizontal as default for autorandr
+#cd ~/.config/autorandr
+#ln -s horizontal default
+#
+#idk some random thing on the wiki
+#sudo touch /etc/modprobe.d/nvidia-drm-modeset.conf
+#echo "options nvidia_drm modeset=1" >/etc/modprobe.d/nvidia-drm-modeset.conf
+
 #==============================
 ##firefox install
 #https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04
