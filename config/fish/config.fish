@@ -14,7 +14,7 @@ if status is-interactive
     alias ...="cd ../.."
     #alias cat="bat"
     alias rm="trash-rm"#http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html
-    alias ducd="du -had 1 . | sort -n -r | head -n 20"
+    alias ducd="du -had 1 . | sort -n -r"
 end
 
 set -g theme_display_git yes
