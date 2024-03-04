@@ -19,3 +19,7 @@ yes | sudo apt install openjdk-19-jdk
 
 ##Starship
 #curl -sS https://starship.rs/install.sh | sh
+
+## disable ibus emoji
+#https://askubuntu.com/questions/1372781/new-ctrl-period-key-sequence-default-in-21-10
+# this messes with pycharm ctrl + .
