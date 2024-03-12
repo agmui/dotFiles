@@ -95,6 +95,9 @@ fcitx5 fcitx5-mozc fonts-noto fonts-noto-cjk fonts-noto-cjk-extra ttf-ancient-fo
 qemu-system libvirt-clients libvirt-daemon-system \
 filezilla thunderbird arandr autorandr lxappearance
 
+# Thunderbird date fix
+# https://www.reddit.com/r/Thunderbird/comments/rxo0lc/change_how_time_is_displayed/
+
 # to set horizontal as default for autorandr
 #cd ~/.config/autorandr
 #ln -s horizontal default
