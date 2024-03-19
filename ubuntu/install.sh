@@ -17,6 +17,13 @@ yes | sudo nala update
 yes | sudo nala upgrade
 
 # random lid suspend https://askubuntu.com/questions/15520/how-can-i-tell-ubuntu-to-do-nothing-when-i-close-my-laptop-lid
+#
+# gpu hardware accleration
+# do dis one: https://github.com/elFarto/nvidia-vaapi-driver/?tab=readme-ov-file#firefox
+# READ BUT DONT DO: https://ubuntuhandbook.org/index.php/2021/08/enable-hardware-video-acceleration-va-api-for-firefox-in-ubuntu-20-04-18-04-higher/
+# https://forums.debian.net/viewtopic.php?t=137948
+# https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
+# https://wiki.archlinux.org/title/Hardware_video_acceleration#Verifying_VA-API
 
 #---Commands---
 ##essential commands
