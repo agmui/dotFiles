@@ -15,6 +15,7 @@ if status is-interactive
     #alias cat="bat"
     alias rm="trash-rm"#http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html
     alias ducd="du -had 1 . | sort -n -r"
+    alias tp="trash-put"
 end
 
 set -g theme_display_git yes
@@ -88,3 +89,8 @@ if test -f /home/agmui/miniconda3/bin/conda
 end
 # <<< conda initialize <<<
 
+alias ros2="echo go to config.fish"
+#alias ROSBOT_SIM="ros2 launch rosbot_xl_gazebo simulation.launch.py"
+#bass source /opt/ros/humble/setup.bash
+#bass source ~/cs/Robomasters/ROS/rosbot_ws/install/setup.bash
+#bass source ~/cs/Robomasters/ROS/ros2_ws/install/setup.bash

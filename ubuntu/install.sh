@@ -20,6 +20,7 @@ yes | sudo nala upgrade
 #
 # gpu hardware accleration
 # do dis one: https://github.com/elFarto/nvidia-vaapi-driver/?tab=readme-ov-file#firefox
+# PPA: https://launchpad.net/~ubuntuhandbook1/+archive/ubuntu/nvidia-vaapi
 # READ BUT DONT DO: https://ubuntuhandbook.org/index.php/2021/08/enable-hardware-video-acceleration-va-api-for-firefox-in-ubuntu-20-04-18-04-higher/
 # https://forums.debian.net/viewtopic.php?t=137948
 # https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
