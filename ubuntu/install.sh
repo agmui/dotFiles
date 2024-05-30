@@ -160,6 +160,12 @@ unzip cursors/Catppuccin-Frappe-Maroon-Cursors.zip -d ~/.icons
 # do this: https://askubuntu.com/questions/788736/open-vim-in-xfce4-terminal-from-thunar
 # change the /usr/shar/application/nvim.desktop file on line `Exec=nvim %F` to `Exec=kitty nvim %F`
 
+## DOCK: to get the thinkpad dock to work with ubuntu
+# https://www.synaptics.com/products/displaylink-graphics/downloads/ubuntu
+#
+# sudo apt install ./Downloads/synaptics-repository-keyring.deb
+# sudo apt update
+# sudo apt install displaylink-driver
 
 #==============================
 
