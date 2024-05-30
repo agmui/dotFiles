@@ -276,6 +276,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 ## startup ##
+# autorandr
+exec --no-startup-id autorandr -c &
+
 # polybar
 exec --no-startup-id $HOME/.config/polybar/launch.sh &
 # eww bar
@@ -287,9 +290,6 @@ exec --no-startup-id nitrogen --restore &
 
 # dunst(notifications)
 exec --no-startup-id dunst &
-
-# autorandr
-exec --no-startup-id autorandr -c &
 
 # picom
 #exec --no-startup-id picom &
@@ -323,3 +323,4 @@ exec --no-startup-id alsactl -L restore
 for_window [class="discord"] move container to workspace 8
 for_window [class="thunderbird"] move container to workspace 9
 for_window [class="flameshot"] floating enable
+for_window [class="lobster"] floating enable
