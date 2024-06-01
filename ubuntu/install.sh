@@ -74,6 +74,12 @@ sudo wget https://github.com/JezerM/web-greeter/releases/latest | sudo nala inst
 
 sudo dpkg-reconfigure lightdm # set lightdm as default
 
+# appimagelauncher
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:appimagelauncher-team/stable
+sudo apt update
+sudo apt install appimagelauncher
+
 # ranger --copy-config=all
 
 # only office
