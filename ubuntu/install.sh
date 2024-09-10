@@ -50,6 +50,12 @@ sudo touch /etc/cloud/cloud-init.disabled
 sudo usermod -a -G video ${USER} # add user to video group
 sudo nala install brightnessctl
 
+# sound
+# https://linuxconfig.org/how-to-install-pipewire-on-ubuntu-linux
+# NOTE: dont install wirepipe.
+# it caused weird journalctl -f errors when ever plugging in new headphones or cloasing the lid 
+# and reseting alsamixer to sound level 36??
+# just stick with pipewire-media or what ever the name of the alternative is
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip -P ~/.fonts/
 unzip ~/.fonts/JetBrainsMono.zip
