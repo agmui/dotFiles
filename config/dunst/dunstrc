@@ -306,7 +306,7 @@
 
 [shortcuts]
     # mod1(alt), mod2, mod3, mod4(win)
-    history = ctrl+1
+    history = ctrl+h
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
@@ -335,7 +335,7 @@
     background = "#303446"
     foreground = "#C6D0F5"
     frame_color = "#EF9F76"
-    timeout = 0
+    timeout = 15
     # Icon for notifications with critical urgency, uncomment to enable
     #default_icon = /path/to/icon
 
