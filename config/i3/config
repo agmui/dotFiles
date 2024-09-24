@@ -278,9 +278,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 ## startup ##
 # autorandr
 exec --no-startup-id autorandr -c &
-
-# polybar
-exec --no-startup-id $HOME/.config/polybar/launch.sh &
 # eww bar
 #exec --no-startup-id /home/agmui/.config/eww/eww -c /home/agmui/.config/eww/ open topBar &
 
@@ -297,6 +294,8 @@ exec --no-startup-id dunst &
 # conky
 exec --no-startup-id ~/.config/conky/conky.conf
 
+# polybar
+exec --no-startup-id $HOME/.config/polybar/launch.sh &
 # jpn keyboard
 #exec --no-startup-id fcitx -d
 

@@ -2,3 +2,6 @@
 
 nitrogen --restore
 notify-send -i display "Display profile" "$AUTORANDR_CURRENT_PROFILE"
+killall conky
+conky -c  $HOME/.config/conky/1366x768/conky.conf_01
+

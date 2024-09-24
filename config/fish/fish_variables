@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export NOTION_BLOG_DATABASE_ID:4c567433bd4c449fb1a2311ba2e9205b
+SETUVAR --export NOTION_TOKEN:secret_FZXqtNH49s4p9BEdNj3zIk8fIOyRAAz8ljer8C5HAtL
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/home/agmui/\x2elocal/share/z/data
@@ -38,7 +40,7 @@ SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrbl
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:brgreen
 SETUVAR fish_color_valid_path:\x2d\x2dunderline
-SETUVAR fish_greeting:no
+SETUVAR --export fish_greeting:no
 SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow

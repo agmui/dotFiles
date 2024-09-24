@@ -57,6 +57,12 @@ sudo nala install brightnessctl
 # and reseting alsamixer to sound level 36??
 # just stick with pipewire-media or what ever the name of the alternative is
 
+# network
+# if a dock or ethernet dongle does not work
+# run `ip link` to check if the device is conected
+# then run: `sudo nmcli con add type ethernet ifname enx00e04c683212`
+# to see it show up in ifconfig
+
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip -P ~/.fonts/
 unzip ~/.fonts/JetBrainsMono.zip
 
@@ -140,6 +146,8 @@ Pin-Priority: 1001
 echo 'Unattended-Upgrade::Allowed-Origins:: "LP-PPA-mozillateam:${distro_codename}";' | sudo tee /etc/apt/apt.conf.d/51unattended-upgrades-firefox
 
 sudo apt install firefox
+
+# in about:config set accessibility.force_disabled to 1
 
 #==============================
 ##Theming

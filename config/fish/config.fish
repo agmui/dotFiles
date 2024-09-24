@@ -16,6 +16,7 @@ if status is-interactive
     alias rm="trash-rm"#http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html
     alias ducd="du -had 1 . | sort -n -r"
     alias tp="trash-put"
+    alias grep="egrep --color" #TODO: find a way to have default color on
 end
 
 set -g theme_display_git yes
@@ -89,8 +90,25 @@ if test -f /home/agmui/miniconda3/bin/conda
 end
 # <<< conda initialize <<<
 
-alias ros2="echo go to config.fish"
+# ===== ros stuff =====
 #alias ROSBOT_SIM="ros2 launch rosbot_xl_gazebo simulation.launch.py"
-#bass source /opt/ros/humble/setup.bash
-#bass source ~/cs/Robomasters/ROS/rosbot_ws/install/setup.bash
-#bass source ~/cs/Robomasters/ROS/ros2_ws/install/setup.bash
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+# --- nav2 stuff ---
+bass source /opt/ros/humble/setup.bash
+set -x TURTLEBOT3_MODEL waffle
+set -x GAZEBO_MODEL_PATH $GAZEBO_MODEL_PATH:/opt/ros/humble/share/turtlebot3_gazebo/models
+set -x LDS_MODEL LDS-01
+# ====================
+
+#bass source ~/cs/Robomasters/ROS2/rosbot_ws/install/setup.bash
+#bass source ~/cs/Robomasters/ROS2/ros2_ws/install/local_setup.bash
+
+#bass source ~/cs/Robomasters/boulder_comp_ROS2/ros2_ws/install/local_setup.bash
+#bass source /usr/share/colcon_cd/function/colcon_cd.sh
+
+set -x PATH /home/agmui/cs/Robomasters/tools/gcc-arm-none-eabi-10.3-2021.10 $PATH
+
+#set -x PATH /usr/local/cuda-11.8/bin $PATH
+#set -x LD_LIBRARY_PATH /usr/local/cuda-11.8/lib64 $LD_LIBRARY_PATH
+
+set -x QT_AUTO_SCREEN_SCALE_FACTOR 0

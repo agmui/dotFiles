@@ -6,16 +6,20 @@ output DVI-I-3-2
 off
 output DVI-I-2-1
 off
-output DP-1-1.3
-off
-output DP-1-0
-off
-output DP-1-1
-off
 output HDMI-1-0
-off
+mode 1920x1200
+pos 1920x0
+primary
+rate 59.95
+output DP-1-0
+mode 1920x1080
+pos 0x120
+rate 59.99
+output DP-1-1
+mode 1920x1080
+pos 3840x120
+rate 60.00
 output eDP-1
 mode 1920x1080
-pos 0x0
-primary
+pos 5760x120
 rate 60.00
