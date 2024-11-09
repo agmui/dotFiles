@@ -51,6 +51,9 @@ sudo usermod -a -G video ${USER} # add user to video group
 sudo nala install brightnessctl
 
 # sound
+# wireplumber guide: (fixes bug with alsamixer resetting volume)
+# https://pipewire.pages.freedesktop.org/wireplumber/daemon/configuration/modifying_configuration.html
+#
 # https://linuxconfig.org/how-to-install-pipewire-on-ubuntu-linux
 # NOTE: dont install wirepipe.
 # it caused weird journalctl -f errors when ever plugging in new headphones or cloasing the lid 
