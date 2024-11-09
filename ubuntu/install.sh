@@ -51,6 +51,7 @@ sudo usermod -a -G video ${USER} # add user to video group
 sudo nala install brightnessctl
 
 # sound
+# wireplumber install guide: https://gist.github.com/the-spyke/2de98b22ff4f978ebf0650c90e82027e?permalink_comment_id=4346694
 # wireplumber guide: (fixes bug with alsamixer resetting volume)
 # https://pipewire.pages.freedesktop.org/wireplumber/daemon/configuration/modifying_configuration.html
 #
