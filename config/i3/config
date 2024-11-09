@@ -273,8 +273,11 @@ bindsym $mod+Shift+s exec flameshot gui
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && amixer -c 1 set Master toggle # mute sound
 #wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle # mute mic (uses wireplumber)
+# echo 'follow-mute' | sudo tee '/sys/class/sound/ctl-led/mic/mode' # for changing the light on the keyboard
+# echo 'off' | sudo tee '/sys/class/sound/ctl-led/mic/mode' # 
+# echo 'on' | sudo tee '/sys/class/sound/ctl-led/mic/mode' # 
 
 ## startup ##
 # autorandr
