@@ -46,6 +46,9 @@ yes | sudo nala purge needrestart
 # https://cloudinit.readthedocs.io/en/latest/explanation/boot.html
 sudo touch /etc/cloud/cloud-init.disabled
 
+# setup touchpad
+# https://wiki.archlinux.org/title/Libinput#Enable_the_touchpad_while_typing
+
 # setup backlight
 sudo usermod -a -G video ${USER} # add user to video group
 sudo nala install brightnessctl
