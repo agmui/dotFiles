@@ -212,6 +212,9 @@ yes | sudo nala install code
 #sudo cp keyboard /etc/default/keyboard
 #sudo systemctl restart console-setup
 
+#---set date and time to autosync with the internet---
+timedatectl set-ntp true
+
 echo "follow this guide for rose vpn: https://wiki.rhlug.org/index.php/Accessing_the_Off-Campus_VPN"
 
 echo "=========================================================================================="
