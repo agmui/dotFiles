@@ -280,6 +280,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle && amixe
 # echo 'on' | sudo tee '/sys/class/sound/ctl-led/mic/mode' # 
 
 ## startup ##
+
+#polkit
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+
 # autorandr
 exec --no-startup-id autorandr -c &
 # eww bar

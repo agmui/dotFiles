@@ -41,6 +41,10 @@ yes | sudo nala purge needrestart
 # sudo apt update
 # sudo apt install tlpui
 
+# random riceing stuff
+# mprocs https://github.com/pvolok/mprocs
+# eza https://github.com/eza-community/eza?tab=readme-ov-file
+
 # disable cloud-init
 # https://askubuntu.com/questions/1321968/ubuntu-server-20-04-2-lts-hangs-after-bootup-cloud-init-1781-yyyy-mm-dd-h
 # https://cloudinit.readthedocs.io/en/latest/explanation/boot.html

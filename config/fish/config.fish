@@ -8,13 +8,13 @@ if status is-interactive
 
     ### ALIASES ###
     alias na="sudo nala install"
-    alias ls="exa --icons -sold -snew"
+    alias ls="eza --icons -snew" #"exa --icons -sold -snew"
     alias v="nvim"
     alias ..="cd .."
     alias ...="cd ../.."
     #alias cat="bat"
     alias rm="trash-rm"#http://www.webupd8.org/2010/02/make-rm-move-files-to-trash-instead-of.html
-    alias ducd="du -had 1 . | sort -n -r"
+    alias ducd="eza -l --total-size"#"du -had 1 . | sort -n -r"
     alias tp="trash-put"
     alias grep="egrep --color" #TODO: find a way to have default color on
 end
@@ -94,10 +94,10 @@ end
 #alias ROSBOT_SIM="ros2 launch rosbot_xl_gazebo simulation.launch.py"
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 # --- nav2 stuff ---
-bass source /opt/ros/humble/setup.bash
-set -x TURTLEBOT3_MODEL waffle
-set -x GAZEBO_MODEL_PATH $GAZEBO_MODEL_PATH:/opt/ros/humble/share/turtlebot3_gazebo/models
-set -x LDS_MODEL LDS-01
+#bass source /opt/ros/humble/setup.bash
+# set -x TURTLEBOT3_MODEL waffle
+# set -x GAZEBO_MODEL_PATH $GAZEBO_MODEL_PATH:/opt/ros/humble/share/turtlebot3_gazebo/models
+# set -x LDS_MODEL LDS-01
 # ====================
 
 #bass source ~/cs/Robomasters/ROS2/rosbot_ws/install/setup.bash
@@ -112,3 +112,10 @@ set -x PATH /home/agmui/cs/Robomasters/tools/gcc-arm-none-eabi-10.3-2021.10 $PAT
 #set -x LD_LIBRARY_PATH /usr/local/cuda-11.8/lib64 $LD_LIBRARY_PATH
 
 set -x QT_AUTO_SCREEN_SCALE_FACTOR 0
+
+# >>> coursier install directory >>>
+set -gx PATH "$PATH:/home/agmui/.local/share/coursier/bin"
+# <<< coursier install directory <<<
+
+
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/agmui/.ghcup/bin $PATH # ghcup-env
