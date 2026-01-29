@@ -77,6 +77,9 @@ sudo nala install brightnessctl
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/JetBrainsMono.zip -P ~/.fonts/
 unzip ~/.fonts/JetBrainsMono.zip
 
+#tailscale
+# run "$ tailscale completion" to set up tailscale autocomplete
+
 #nvim
 # random issue with jetbrains autocopy on selection https://intellij-support.jetbrains.com/hc/en-us/community/posts/360004165300/comments/14734331884946
 yes | sudo add-apt-repository ppa:neovim-ppa/unstable
