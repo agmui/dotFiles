@@ -119,3 +119,6 @@ set -gx PATH "$PATH:/home/agmui/.local/share/coursier/bin"
 
 
 set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /home/agmui/.ghcup/bin $PATH # ghcup-env
+
+
+set -x LD_LIBRARY_PATH /usr/local/gcc-14.1.0/lib64/ $LD_LIBRARY_PATH
