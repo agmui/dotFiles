@@ -70,6 +70,10 @@ sudo nala install brightnessctl
 # it caused weird journalctl -f errors when ever plugging in new headphones or cloasing the lid 
 # and reseting alsamixer to sound level 36??
 # just stick with pipewire-media or what ever the name of the alternative is
+#
+# focusrite settings(try both lol):
+# https://github.com/Focusrite-Scarlett-on-Linux/sound-usb-kernel-module
+# https://github.com/Focusrite-Scarlett-on-Linux/sound-usb-kernel-module/tree/v5.11-device
 
 # network
 # if a dock or ethernet dongle does not work
