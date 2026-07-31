@@ -75,6 +75,8 @@ sudo nala install brightnessctl
 # https://github.com/Focusrite-Scarlett-on-Linux/sound-usb-kernel-module
 # https://github.com/Focusrite-Scarlett-on-Linux/sound-usb-kernel-module/tree/v5.11-device
 # echo "options snd_usb_audio vid=0x1235 pid=0x8210 device_setup=1" > /etc/modprobe.d/snd_usb_audio.conf
+#
+# setting up mic mono settings: https://gitlab.freedesktop.org/pipewire/pipewire/-/wikis/Virtual-Devices#virtual-mono-source
 
 # network
 # if a dock or ethernet dongle does not work
