@@ -1,0 +1,8 @@
+[user]
+	email = spitballengineering@gmail.com
+	name = Spitball Engineering
+[core]
+	autocrlf = input
+	editor = nvim
+[init]
+	defaultBranch = main
