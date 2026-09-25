@@ -181,7 +181,7 @@ sudo apt install firefox
 wget https://github.com/catppuccin/gtk/releases/download/v0.6.0/Catppuccin-Frappe-Standard-Maroon-Dark.zip -P ~/.themes/
 unzip ~/.themes/Catppuccin-Frappe-Standard-Maroon-Dark.zip
 # fix for gtk errors
-sudo apt install gtk2-engines-pixbuf gnome-themes-standard gtk2-engines-murrine
+sudo apt install gtk2-engines-pixbuf gnome-themes-standard gtk2-engines-murrine at-spi2-core
 
 # icons
 git clone https://github.com/catppuccin/papirus-folders.git
