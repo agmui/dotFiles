@@ -25,6 +25,8 @@ yes | sudo nala upgrade
 # https://forums.debian.net/viewtopic.php?t=137948
 # https://wiki.archlinux.org/title/Firefox#Hardware_video_acceleration
 # https://wiki.archlinux.org/title/Hardware_video_acceleration#Verifying_VA-API
+#
+# firefox disable AI settings: https://justthebrowser.com/firefox/
 
 # getting the most up to date fish
 sudo apt-add-repository ppa:fish-shell/release-4
