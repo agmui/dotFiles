@@ -16,6 +16,9 @@ echo "---install apps---"
 yes | sudo nala update
 yes | sudo nala upgrade
 
+#idk look into linux-tools
+#https://askubuntu.com/questions/50145/how-to-install-perf-monitoring-tool
+
 # random lid suspend https://askubuntu.com/questions/15520/how-can-i-tell-ubuntu-to-do-nothing-when-i-close-my-laptop-lid
 #
 # gpu hardware accleration
